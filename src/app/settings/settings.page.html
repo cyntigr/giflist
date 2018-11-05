@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Configuración</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon name="close" slot="icon-only">
+
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Divervideos
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        <strong>Divervideos</strong> es un cliente de <strong>Reddit</strong>
+        que muestra los <strong>GIFs</strong> de las secciones (subreddit) de esta red social.
+        Por defecto, se usa la sección <strong>gifs</strong> pero puedes elegir
+        cualquiera como perfectloops, chemicalreactiongifs o funny.
+      </p>
+      <p>Puedes configurar la aplicación mediante las opciones que tienes
+        aquí debajo.
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <h3>Sección (subreddit)</h3>
+  <ion-input type="text" placeholder="Nombre de la sección..." [(ngModel)]="redditService.settings.subreddit">
+  </ion-input>
+  <h3>Orden</h3>
+  <ion-segment color="danger" [(ngModel)]="redditService.settings.sort">
+    <ion-segment-button value="/hot">Popular</ion-segment-button>
+    <ion-segment-button value="/top">Más votado</ion-segment-button>
+    <ion-segment-button value="/new">Novedad</ion-segment-button>
+  </ion-segment>
+
+  <h3>Gifs por página</h3>
+  <ion-segment color="danger" [(ngModel)]="redditService.settings.perPage">
+    <ion-segment-button value="5">5</ion-segment-button>
+    <ion-segment-button value="10">10</ion-segment-button>
+    <ion-segment-button value="15">15</ion-segment-button>
+  </ion-segment>
+  <ion-button color="danger" expand="full" (click)="save()">
+    Guardar configuración
+  </ion-button>
+</ion-content>

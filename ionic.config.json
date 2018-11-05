@@ -1,0 +1,7 @@
+{
+  "name": "ionic-giflist",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
